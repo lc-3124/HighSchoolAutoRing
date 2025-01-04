@@ -50,8 +50,9 @@ void loop()
                 && TimeTable[index].Second == Form.Second)
             {
             SetVolumeToMaxUsingSystemCommand();
-                ArPlayMusic(TimeTable[index].Path);
-                ArDelayCloseBox("¼ì²âµ½Ê±¼äÎÇºÏ£¬ÒôÆµ£¬Æô¶¯£¡£¡£¡", " ", 5);
+                //ArPlayMusic(TimeTable[index].Path);
+                system(TimeTable[index].Path.c_str());
+				ArDelayCloseBox("¼ì²âµ½Ê±¼äÎÇºÏ£¬ÒôÆµ£¬Æô¶¯£¡£¡£¡", " ", 5);
                 Sleep(1000*6);
             }
         }
@@ -62,7 +63,7 @@ int main()
 {
 	
     Arinit();
-	
+ 
     // Òþ²Øconsole´°¿Ú
     HWND consoleWnd = GetConsoleWindow();
     if (consoleWnd!= NULL) {
