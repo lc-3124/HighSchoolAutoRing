@@ -51,7 +51,10 @@ void loop()
             {
             SetVolumeToMaxUsingSystemCommand();
                 //ArPlayMusic(TimeTable[index].Path);
-                system(TimeTable[index].Path.c_str());
+                std::string cmd ;
+                cmd += "D:";
+                cmd += TimeTable[index].Path;
+                system(cmd.c_str());
 				ArDelayCloseBox("检测到时间吻合，音频，启动！！！", " ", 5);
                 Sleep(1000*6);
             }
@@ -63,7 +66,7 @@ int main()
 {
 	
     Arinit();
- 
+
     // 隐藏console窗口
     HWND consoleWnd = GetConsoleWindow();
     if (consoleWnd!= NULL) {

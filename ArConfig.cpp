@@ -1,4 +1,4 @@
-#define MAXTIMES 20
+#define MAXTIMES 21
 #include "ArFuncList.cpp"
 
 // 初始化函数，注册时间点相关信息到TimeTable向量中
@@ -35,7 +35,13 @@ void Arinit() {
     TimeTable[3].Minute = 50;
     TimeTable[3].Second = 7;
     TimeTable[3].Path = "class_over.mp3";
-
+    
+    // 上午第二节课下课时间为 10:05:07
+    TimeTable[21].Day = 0;
+    TimeTable[21].Hour = 10;
+    TimeTable[21].Minute = 5;
+    TimeTable[21].Second = 7;
+    TimeTable[21].Path = "class_over.mp3";
     // 上午第三节课上课时间为 10:23:04
     TimeTable[4].Day = 0;
     TimeTable[4].Hour = 10;
